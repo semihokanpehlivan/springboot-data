@@ -1,7 +1,6 @@
 package com.example.repository;
 
 import com.example.AbstractTest;
-import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.boot.test.TestRestTemplate;

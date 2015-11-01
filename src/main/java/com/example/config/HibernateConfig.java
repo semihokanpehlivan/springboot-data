@@ -5,6 +5,7 @@ import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -36,6 +37,11 @@ public class HibernateConfig {
         properties.put("hibernate.hbm2ddl.auto", "create-update");
         properties.put("hibernate.hbm2ddl.show", true);
         return properties;
+    }
+
+    @Bean
+    public HibernateTemplate hibernateTemplate() {
+        return new HibernateTemplate(sessionFactoryBean().getObject());
     }
 
 }
