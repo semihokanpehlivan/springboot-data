@@ -16,7 +16,7 @@ public class HibernateMainApplication {
         SpringApplication springApplication = new SpringApplication(HibernateMainApplication.class);
         ConfigurableApplicationContext context = springApplication.run(args);
         UserRepository userRepository = context.getBean("user-repo", UserRepository.class);
-        userRepository.addUser(new User("Okan"));
+        userRepository.addUser(new User("SOP"));
     }
 
 }
